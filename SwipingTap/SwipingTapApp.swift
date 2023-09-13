@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SwipingTapApp: App {
+
     var body: some Scene {
+
         WindowGroup {
+
             ContentView(index: 1)
+            
         }
     }
 }

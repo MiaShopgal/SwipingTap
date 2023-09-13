@@ -7,22 +7,30 @@
 
 import SwiftUI
 
-struct LeftView: View {
-    
-    @Binding var index:Int
-    
-    var body: some View {
-        VStack{
-            Text("Hello, Lefty!")
-            Button("back to Center"){
+struct LeftView : View {
+
+    @Binding var index : Int
+
+    var body : some View {
+
+        VStack {
+
+            Text ( "Hello, Lefty!" )
+
+            Button ( "back to Center" ) {
+
                 index = 1
+
             }
         }
     }
 }
 
-struct LeftView_Previews: PreviewProvider {
-    static var previews: some View {
-        LeftView(index: .constant(0))
+struct LeftView_Previews : PreviewProvider {
+
+    static var previews : some View {
+
+        LeftView ( index : .constant ( 0 ) )
+        
     }
 }
