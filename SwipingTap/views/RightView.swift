@@ -21,8 +21,8 @@ struct RightView : View {
 
                 index = 1
 
-            }
-        }
+            }.foregroundColor ( Color.white )
+        }.background ( Color.blue )
     }
 }
 
@@ -31,6 +31,6 @@ struct RightView_Previews : PreviewProvider {
     static var previews : some View {
 
         RightView ( index : .constant ( 2 ) )
-        
+
     }
 }

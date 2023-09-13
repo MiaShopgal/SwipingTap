@@ -10,7 +10,7 @@ import SwiftUI
 struct CenterView : View {
 
     @Binding var index : Int
-    
+
     var body : some View {
 
         VStack {
@@ -28,7 +28,7 @@ struct CenterView : View {
                 index = 2
 
             }
-        }
+        }.background ( Color.white )
     }
 }
 

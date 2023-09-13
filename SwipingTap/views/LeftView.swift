@@ -22,7 +22,7 @@ struct LeftView : View {
                 index = 1
 
             }
-        }
+        }.background ( Color.yellow )
     }
 }
 
@@ -31,6 +31,6 @@ struct LeftView_Previews : PreviewProvider {
     static var previews : some View {
 
         LeftView ( index : .constant ( 0 ) )
-        
+
     }
 }
