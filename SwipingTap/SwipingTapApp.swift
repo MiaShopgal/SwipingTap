@@ -14,7 +14,7 @@ struct SwipingTapApp: App {
 
         WindowGroup {
 
-            ContentView(index: 1)
+            ContentView(index: Tab.yellow)
             
         }
     }

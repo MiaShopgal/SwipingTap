@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LeftView : View {
 
-    @Binding var index : Int
+    @Binding var index : Tab
 
     var body : some View {
 
@@ -19,7 +19,7 @@ struct LeftView : View {
 
             Button ( "back to Center" ) {
 
-                index = 1
+                index = .yellow
 
             }
         }.background ( Color.yellow )
@@ -30,7 +30,7 @@ struct LeftView_Previews : PreviewProvider {
 
     static var previews : some View {
 
-        LeftView ( index : .constant ( 0 ) )
+        LeftView ( index : .constant(.green) )
 
     }
 }

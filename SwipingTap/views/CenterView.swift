@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CenterView : View {
 
-    @Binding var index : Int
+    @Binding var index : Tab
 
     var body : some View {
 
@@ -17,7 +17,7 @@ struct CenterView : View {
 
             Button ( "to <" ) {
 
-                index = 0
+                index = .green
 
             }
 
@@ -25,7 +25,7 @@ struct CenterView : View {
 
             Button ( "to >" ) {
 
-                index = 2
+                index = .red
 
             }
         }.background ( Color.white )
@@ -36,7 +36,7 @@ struct CenterView_Previews : PreviewProvider {
 
     static var previews : some View {
 
-        CenterView ( index : .constant ( 1 ) )
+        CenterView ( index : .constant ( .yellow ) )
 
     }
 }
