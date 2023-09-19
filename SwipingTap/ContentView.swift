@@ -53,7 +53,7 @@ struct ContentView : View {
 
                 NavigationLink {
 
-                    HiddenView ( /*showHidden : $showHidden*/ )
+                    HiddenView ( /*showHidden : $showHidden*/ ).navigationBarBackButtonHidden(true)
 
                 } label : {
                     Text ( "Seek" )
