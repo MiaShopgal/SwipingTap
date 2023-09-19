@@ -11,7 +11,7 @@ struct CenterView : View {
 
     @Binding var index : Int
 
-    @Binding var currentView : String
+//    @Binding var showHidden : Bool
 
     var body : some View {
 
@@ -24,10 +24,17 @@ struct CenterView : View {
             }
 
             Text ( "Hello, Central!" )
-            
-            Button("seek!"){
+
+            /*NavigationView{
+                NavigationLink(destination: HiddenView(showHidden: $showHidden)){
+                    Text("to seek")
+                }.navigationBarHidden(true)
+                 .navigationBarTitleDisplayMode(.automatic)
+            }*/
+
+            /*Button("seek!"){
                 currentView = "Hidden"
-            }
+            }*/
 
             Button ( "to >" ) {
 
@@ -42,7 +49,7 @@ struct CenterView_Previews : PreviewProvider {
 
     static var previews : some View {
 
-        CenterView ( index : .constant ( 1 ), currentView: .constant("Main"))
+        CenterView ( index : .constant ( 1 )/*, showHidden: .constant(false)*/)
 
     }
 }

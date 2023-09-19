@@ -10,13 +10,13 @@ import SwiftUI
 
 struct HiddenView : View {
 
-    @Binding var currentView : String
+//    @Binding var showHidden : Bool
 
     var body : some View {
         VStack {
             Button ( "back to main" ) {
 
-                currentView = "Main"
+//                showHidden = false
 
             }
 
@@ -29,6 +29,6 @@ struct HiddenView : View {
 
 struct HiddenView_Previews : PreviewProvider {
     static var previews : some View {
-        HiddenView ( currentView : .constant ( "Hidden" ) )
+        HiddenView(/*showHidden: .constant(true)*/)
     }
 }

@@ -12,48 +12,58 @@ struct ContentView : View {
 
     @State var index : Int
 
-    @State private var currentView = "Main"
+//    @State private var showHidden = false
 
     var body : some View {
 
-        ZStack {
+        NavigationStack {
 
-            Color.green
+            ZStack {
 
+                Color.green
 
-            switch currentView {
+//            switch currentView {
+//
+//                case "Main":
+                TabView ( selection : $index ) {
 
-                case "Main":
-                    TabView ( selection : $index ) {
+                    LeftView ( index : $index ).tag ( 0 )
+                                               .tabItem {
+                                                   Label ( "dummy label",
+                                                           systemImage : "gearshape.fill" )
+                                               }
+                    CenterView ( index : $index
+                                 /*showHidden : $showHidden*/ ).tag ( 1 )
+                                                               .tabItem {
+                                                                   Label ( "label won't appear",
+                                                                           systemImage : "gearshape.fill" )
+                                                               }
+                    RightView ( index : $index ).tag ( 2 )
+                                                .tabItem {
+                                                    Label ( "since the style is page",
+                                                            systemImage : "gearshape.fill" )
+                                                }
 
-                        LeftView ( index : $index ).tag ( 0 )
-                                                   .tabItem {
-                                                       Label ( "dummy label",
-                                                               systemImage : "gearshape.fill" )
-                                                   }
-                        CenterView ( index : $index,
-                                     currentView : $currentView ).tag ( 1 )
-                                                                 .tabItem {
-                                                                     Label ( "label won't appear",
-                                                                             systemImage : "gearshape.fill" )
-                                                                 }
-                        RightView ( index : $index ).tag ( 2 )
-                                                    .tabItem {
-                                                        Label ( "since the style is page",
-                                                                systemImage : "gearshape.fill" )
-                                                    }
+                }.tabViewStyle ( .page ( indexDisplayMode : .never ) )
+                 .onChange ( of : index ) { value in
 
-                    }.tabViewStyle ( .page ( indexDisplayMode : .never ) )
-                     .onChange ( of : index ) { value in
+                     print ( "index is \( value )" )
 
-                         print ( "index is \( value )" )
+                 }
 
-                     }
+                NavigationLink {
 
-                case "Hidden":
-                    HiddenView ( currentView : $currentView )
-                default:
-                    EmptyView ( )
+                    HiddenView ( /*showHidden : $showHidden*/ )
+
+                } label : {
+                    Text ( "Seek" )
+                }.offset(y: -200)
+
+//                case "Hidden":
+//                    HiddenView ( currentView : $currentView )
+//                default:
+//                    EmptyView ( )
+//            }
             }
         }
     }
