@@ -12,7 +12,7 @@ struct ContentView : View {
 
     @State var index : Int
 
-//    @State private var showHidden = false
+    @State private var showHidden = false
 
     var body : some View {
 
@@ -51,13 +51,19 @@ struct ContentView : View {
 
                  }
 
-                NavigationLink {
-
-                    HiddenView ( /*showHidden : $showHidden*/ ).navigationBarBackButtonHidden(true)
-
-                } label : {
-                    Text ( "Seek" )
+                Button("Show it"){
+                    showHidden = true
+                }.sheet(isPresented: $showHidden){
+                    HiddenView()
                 }.offset(y: -200)
+
+//                NavigationLink {
+//
+//                    HiddenView ( /*showHidden : $showHidden*/ ).navigationBarBackButtonHidden(true)
+//
+//                } label : {
+//                    Text ( "Seek" )
+//                }.offset(y: -200)
 
 //                case "Hidden":
 //                    HiddenView ( currentView : $currentView )

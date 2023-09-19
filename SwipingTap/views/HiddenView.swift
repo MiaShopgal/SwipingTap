@@ -11,12 +11,15 @@ import SwiftUI
 struct HiddenView : View {
 
 //    @Binding var showHidden : Bool
+@Environment(\.dismiss) private var dismiss
 
     var body : some View {
         VStack {
             Button ( "back to main" ) {
 
 //                showHidden = false
+
+            dismiss ( )
 
             }
 

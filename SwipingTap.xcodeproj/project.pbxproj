@@ -165,6 +165,8 @@
 			dependencies = (
 			);
 			name = SwipingTap;
+			packageProductDependencies = (
+			);
 			productName = SwipingTap;
 			productReference = 0DBBEC882AB1422600646360 /* SwipingTap.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +239,9 @@
 				Base,
 			);
 			mainGroup = 0DBBEC7F2AB1422600646360;
+			packageReferences = (
+				0DBBECBD2AB15EDA00646360 /* XCRemoteSwiftPackageReference "ViewExtractor" */,
+			);
 			productRefGroup = 0DBBEC892AB1422600646360 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -628,6 +633,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DBBECBD2AB15EDA00646360 /* XCRemoteSwiftPackageReference "ViewExtractor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GeorgeElsham/ViewExtractor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 0DBBEC802AB1422600646360 /* Project object */;
 }
