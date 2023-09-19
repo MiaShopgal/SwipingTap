@@ -11,6 +11,8 @@ struct CenterView : View {
 
     @Binding var index : Int
 
+    @Binding var currentView : String
+
     var body : some View {
 
         VStack {
@@ -22,6 +24,10 @@ struct CenterView : View {
             }
 
             Text ( "Hello, Central!" )
+            
+            Button("seek!"){
+                currentView = "Hidden"
+            }
 
             Button ( "to >" ) {
 
@@ -36,7 +42,7 @@ struct CenterView_Previews : PreviewProvider {
 
     static var previews : some View {
 
-        CenterView ( index : .constant ( 1 ) )
+        CenterView ( index : .constant ( 1 ), currentView: .constant("Main"))
 
     }
 }

@@ -12,30 +12,49 @@ struct ContentView : View {
 
     @State var index : Int
 
+    @State private var currentView = "Main"
+
     var body : some View {
 
         ZStack {
 
             Color.green
 
-            TabView ( selection : $index ) {
 
-                LeftView ( index : $index ).tag ( 0 )
-                                           .tabItem { Label ( "dummy label",
-                                                              systemImage : "gearshape.fill" ) }
-                CenterView ( index : $index ).tag ( 1 )
-                                             .tabItem { Label ( "label won't appear",
-                                                                systemImage : "gearshape.fill" ) }
-                RightView ( index : $index ).tag ( 2 )
-                                            .tabItem { Label ( "since the style is page",
-                                                               systemImage : "gearshape.fill" ) }
+            switch currentView {
 
-            }.tabViewStyle ( .page ( indexDisplayMode : .never ) )
-             .onChange ( of : index ) { value in
+                case "Main":
+                    TabView ( selection : $index ) {
 
-                 print ( "index is \( value )" )
+                        LeftView ( index : $index ).tag ( 0 )
+                                                   .tabItem {
+                                                       Label ( "dummy label",
+                                                               systemImage : "gearshape.fill" )
+                                                   }
+                        CenterView ( index : $index,
+                                     currentView : $currentView ).tag ( 1 )
+                                                                 .tabItem {
+                                                                     Label ( "label won't appear",
+                                                                             systemImage : "gearshape.fill" )
+                                                                 }
+                        RightView ( index : $index ).tag ( 2 )
+                                                    .tabItem {
+                                                        Label ( "since the style is page",
+                                                                systemImage : "gearshape.fill" )
+                                                    }
 
-             }
+                    }.tabViewStyle ( .page ( indexDisplayMode : .never ) )
+                     .onChange ( of : index ) { value in
+
+                         print ( "index is \( value )" )
+
+                     }
+
+                case "Hidden":
+                    HiddenView ( currentView : $currentView )
+                default:
+                    EmptyView ( )
+            }
         }
     }
 }
