@@ -53,7 +53,8 @@ struct ContentView : View {
 
                 Button("Show it"){
                     showHidden = true
-                }.sheet(isPresented: $showHidden){
+//                }.sheet(isPresented: $showHidden){
+                }.fullScreenCover(isPresented: $showHidden){
                     HiddenView()
                 }.offset(y: -200)
 
