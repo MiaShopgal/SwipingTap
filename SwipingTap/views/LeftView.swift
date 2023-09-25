@@ -21,8 +21,12 @@ struct LeftView : View {
 
                 index = 1
 
-            }
-        }.background ( Color.yellow )
+            }.padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 16).stroke(.blue, lineWidth: 4)
+            )
+        }
+//        .background ( Color.yellow )
     }
 }
 
